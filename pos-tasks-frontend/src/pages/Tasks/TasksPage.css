@@ -1,0 +1,516 @@
+.tasks-page {
+  padding: 0 10rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #ffffff;
+  background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  backdrop-filter: blur(2px);
+  animation: zoomBackground 30s linear infinite alternate;
+  background-attachment: fixed;
+}
+
+@keyframes zoomBackground {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 200%;
+  }
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: relative;
+  z-index: 1;
+  animation: pulseGlow 3s infinite alternate;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 
+               0 0 20px rgba(255, 97, 166, 0.6),
+               0 0 30px rgba(106, 0, 255, 0.8),
+               0 0 40px rgba(106, 0, 255, 0.6),
+               0 0 50px rgba(106, 0, 255, 0.4);
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 
+                 0 0 30px rgba(255, 97, 166, 0.6),
+                 0 0 40px rgba(106, 0, 255, 0.8),
+                 0 0 50px rgba(106, 0, 255, 0.6),
+                 0 0 60px rgba(106, 0, 255, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.7),
+                 0 0 60px rgba(255, 97, 166, 0.6),
+                 0 0 80px rgba(106, 0, 255, 0.8),
+                 0 0 100px rgba(106, 0, 255, 0.6),
+                 0 0 120px rgba(106, 0, 255, 0.4);
+  }
+}
+
+/* From Uiverse.io by StealthWorm */ 
+.nova-tarefa-btn {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  cursor: pointer;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: "Arial";
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.nova-tarefa-btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.nova-tarefa-btn:hover {
+  transform: scale(1.1);
+}
+
+.nova-tarefa-btn:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.nova-tarefa-btn:active .circle {
+  background: #fe53bb;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters select {
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #888;
+  background: #1e293b;
+  color: #fff;
+}
+
+.planet-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 40px 0;
+}
+
+.planet-tab {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  animation: rotatePlanet 20s linear infinite, glowPulse 6s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+}
+
+.planet-tab:hover {
+  transform: scale(1.1);
+}
+
+.planet-tab-label {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px black;
+}
+
+.planet-tab.active {
+  box-shadow: 0px 0px 40px 15px rgba(255, 255, 255, 0.7);
+}
+
+.planet-todas {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7VwyE5iw-iGoEvUj9BV5mnCSpmUi-By-42Q&s'); 
+}
+
+.planet-andamento {
+  background-image: url('https://previews.123rf.com/images/sakkmesterke/sakkmesterke1709/sakkmesterke170900024/85363866-frozen-planet-texture-panorama-360-degrees-computer-generated-abstract-background-3d-rendering.jpg');
+}
+.planet-pendentes {
+  background-image: url('https://wallpapers.com/images/high/dark-red-psychedelic-4k-ps341d01lwp3q7fy.webp'); 
+}
+.planet-concluidas {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1baff0d-ff5d-46d5-bb3e-0a408bf8a513/dfzvdpw-93ac0b90-857d-435f-9f5b-3638a49cdd2c.jpg/v1/fill/w_1024,h_512,q_75,strp/earth_s_surface_and_atmosphere_texture_combined_by_samuelthespacefan55_dfzvdpw-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvZDFiYWZmMGQtZmY1ZC00NmQ1LWJiM2UtMGE0MDhiZjhhNTEzXC9kZnp2ZHB3LTkzYWMwYjkwLTg1N2QtNDM1Zi05ZjViLTM2MzhhNDljZGQyYy5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.OhMiN2cFX4ft55eaAIRIzZcVS1dermQ-zbsXGWBzfNs'); 
+}
+
+@keyframes rotatePlanet {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0px 0px 5px 2px rgba(255, 255, 255, 0.3),
+      inset 0px 0px 10px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0px 0px 15px 5px rgba(255, 255, 255, 0.5),
+      inset 0px 0px 20px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.tasks-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.task-card {
+  background: rgba(30, 41, 59, 0.85);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.task-card h3 {
+  font-size: 1.2rem;
+  color: #e0f2fe;
+  margin-bottom: 0.5rem;
+}
+
+.task-card p {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.task-form {
+  background: rgba(30, 41, 59, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Agrupamento dos campos em grid */
+.task-form .form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #475569;
+  background-color: #1e293b;
+  color: #45a29e;
+  font-size: 1rem;
+  resize: none;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+/* Área de texto */
+.task-form textarea {
+  min-height: 120px;
+}
+
+/* Cor do select */
+.task-form select {
+  background-color: #0f172a;
+}
+
+/* Botões lado a lado */
+.task-form .button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.6rem; 
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.task-form .criar-tarefa-btn,
+.task-form .cancelar-tarefa-btn {
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  min-width: 120px;
+  flex: 1;
+  max-width: 200px;
+  margin-right: 1rem;
+}
+
+.task-form .criar-tarefa-btn {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+.task-form .criar-tarefa-btn:hover {
+  background-color: #60a5fa;
+}
+
+.task-form .cancelar-tarefa-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.task-form .cancelar-tarefa-btn:hover {
+  background-color: #dc2626;
+}
+
+@media (max-width: 500px) {
+  .task-form .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.priority {
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: bold;
+}
+
+.priority.baixa {
+  background-color: #22c55e;
+}
+
+.priority.media {
+  background-color: #facc15;
+  color: #1e293b;
+}
+
+.priority.alta {
+  background-color: #ef4444;
+}
+
+.concluir-btn,
+.reabrir-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background: #7c3aed;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s;
+  width: 50%;
+}
+
+.concluir-btn:hover,
+.reabrir-btn:hover {
+  background: #6d28d9;
+}
+
+.excluir-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ef4444;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  transition: color 0.3s;
+  width: 50%;
+}
+
+.excluir-btn:hover {
+  color: #dc2626;
+  background: transparent; 
+}
+

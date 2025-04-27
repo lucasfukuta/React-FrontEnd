@@ -1,0 +1,35 @@
+.profile-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-container h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .profile-container label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-container input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+  }
+  
+  .profile-container button {
+    padding: 0.7rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
+  
